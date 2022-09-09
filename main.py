@@ -99,7 +99,22 @@ if __name__ == "__main__":
     """
     print(arr[[1, 4, 2, 3]][2:, [1, 3, 0, 2]], end="\n\n")
 
+    print(arr[[5, 6, 7]][1:, ::-1], end="\n\n")
+
     print(arr[~arr % 2 == 0], end="\n\n")
+
+    # generate one new nArray for exaple.
+    arr = np.arange(30).reshape(3, 10)
+
+    # when I use the (.T) I transpose the array data.
+    # .T is equal to use .transpose()
+    print(arr.T, end="\n\n")
+
+    arr = np.arange(16).reshape((2, 2, 4))
+    print(arr, end="\n\n")
+    print(arr.T, end="\n\n")
+    print(arr.transpose((1, 0, 2)), end="\n\n")
+
 
 
 
