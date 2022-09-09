@@ -85,8 +85,22 @@ if __name__ == "__main__":
     # select especific lines using the inverse form.
     print(new_example[[-2, -3, -4]], end="\n\n")
 
-    # Here I create one nArray with 32 sequecial numbers values and I resize than to 8 lines and 4 columns
+    # Here I create one nArray with 32 sequecial numbers values, and I resize than to 8 lines and 4 columns
     arr = np.arange(32).reshape(8, 4)
 
     print(arr)
+    # get value by indice, it works like tuple, it may return a bidimentional nArray with selection.
+    # [(1,0), (3,3), (7, 2)]
+    print(arr[[1, 3, 7], [0, 3, 2]], end="\n\n")
+
+    """
+        First I select the lines 1, 4, 2, 3 of arr, after this,
+      I select only the numbers after de (2) second line using [2:]
+    """
+    print(arr[[1, 4, 2, 3]][2:, [1, 3, 0, 2]], end="\n\n")
+
+    print(arr[~arr % 2 == 0], end="\n\n")
+
+
+
 
