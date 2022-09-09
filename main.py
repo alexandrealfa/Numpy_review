@@ -75,8 +75,18 @@ if __name__ == "__main__":
     new_example = np.empty((6, 3))
 
     for i in range(6):
-        new_example[i] = i
+        new_example[i] = i+2
 
     print(new_example, end="\n\n")
+
+    # select especific lines in list of array
     print(new_example[[1, 3, 4]], end="\n\n")
+
+    # select especific lines using the inverse form.
     print(new_example[[-2, -3, -4]], end="\n\n")
+
+    # Here I create one nArray with 32 sequecial numbers values and I resize than to 8 lines and 4 columns
+    arr = np.arange(32).reshape(8, 4)
+
+    print(arr)
+
