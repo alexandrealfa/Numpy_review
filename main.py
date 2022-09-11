@@ -115,7 +115,6 @@ if __name__ == "__main__":
     print(arr.T, end="\n\n")
     print(arr.transpose((1, 0, 2)), end="\n\n")
 
+    arr = np.random.randn(6, 3)
 
-
-
-
+    np.dot(arr.T, arr)
