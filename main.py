@@ -94,7 +94,7 @@ if __name__ == "__main__":
     print(arr[[1, 3, 7], [0, 3, 2]], end="\n\n")
 
     """
-        First I select the lines 1, 4, 2, 3 of arr, after this,
+    First I select the lines 1, 4, 2, 3 of arr, after this,
       I select only the numbers after de (2) second line using [2:]
     """
     print(arr[[1, 4, 2, 3]][2:, [1, 3, 0, 2]], end="\n\n")
@@ -110,11 +110,40 @@ if __name__ == "__main__":
     # .T is equal to use .transpose()
     print(arr.T, end="\n\n")
 
+    arr = np.random.randn(6, 3)
+
+    print(np.dot(arr.T, arr))
+
     arr = np.arange(16).reshape((2, 2, 4))
+
     print(arr, end="\n\n")
     print(arr.T, end="\n\n")
     print(arr.transpose((1, 0, 2)), end="\n\n")
 
-    arr = np.random.randn(6, 3)
+    """
+    swapaxes:
+        aceita um par de numero de eixos e troca os eixos indicados para reorganizar os dados.
+        Return: swapaxer return just a data visualizer, not a copy, in which case, you will need perform an assignment
+         to a variable.
+    """
+    print(arr.swapaxes(1, 2))
 
-    np.dot(arr.T, arr)
+    """
+    Universal Functions (Ufunc):
+        Ufunc are functions that perform modifications on all the data of your nArray.
+        Ufunc unic (Ufunc unária) = with unic param
+        Ufunc binary (Ufunc binária) = with multiples params
+    """
+    ex_arr = np.arange(0, 10)
+
+    # Unic Ufunc example
+    print(np.sqrt(ex_arr), end="\n\n")
+    print(np.exp(ex_arr), end="\n\n")
+
+    ex_a, ex_b = np.random.randn(8), np.random.randn(8)
+    print(np.sqrt(ex_a), end="\n\n")
+    print(np.sqrt(ex_b), end="\n\n")
+
+    # Binary Ufunc example
+    print(np.maximum(ex_a, ex_b), end="\n\n")
+
