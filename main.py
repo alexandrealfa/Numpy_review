@@ -176,6 +176,38 @@ if __name__ == "__main__":
     new_value = np.where(arr_condition, arr_value, arr_value2)
     print(new_value, end="\n\n")
 
+    # is posible use one general condition argument.
+    new_example = np.where(arr_value > 5, arr_value, arr_value2)
+    print(new_example, end="\n\n")
 
-    
-    
+    # is possible set one unic value
+    new_example = np.where(arr_value > 5, 'sim', arr_value2)
+    print(new_example, end="\n\n")
+
+    """
+    math and static methods in numpy
+    """
+    arr = np.arange(0, 40).reshape(10, 4)
+    print('arr: ', arr, end="\n\n")
+    print(np.sum(arr), end="\n\n")  # it's like arr.sum()
+    print(np.mean(arr), end="\n\n")  # it's like arr.mean()
+
+    # using axis param, to apply operation in colum(0) or line(1) of matrice
+    print(arr.sum(axis=0), end="\n\n")
+    print(arr.mean(axis=1), end="\n\n")
+
+    # cumsum is used for calc the acummulate sum.
+    print(arr.cumsum(), end="\n\n")
+    print('*' * 30, end="\n\n")
+
+    # is possible use axis in cumsum on matrices
+    arr = np.arange(40).reshape((4, 2, 5))
+    print('arr: ', arr, end="\n\n")
+    print(arr.cumsum(axis=0), end="\n\n")
+
+
+
+
+
+
+
