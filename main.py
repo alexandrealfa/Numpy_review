@@ -75,7 +75,7 @@ if __name__ == "__main__":
     new_example = np.empty((6, 3))
 
     for i in range(6):
-        new_example[i] = i+2
+        new_example[i] = i + 2
 
     print(new_example, end="\n\n")
 
@@ -140,10 +140,42 @@ if __name__ == "__main__":
     print(np.sqrt(ex_arr), end="\n\n")
     print(np.exp(ex_arr), end="\n\n")
 
-    ex_a, ex_b = np.random.randn(8), np.random.randn(8)
+    ex_a, ex_b = np.random.randint(1, 8), np.random.randint(1, 8)
     print(np.sqrt(ex_a), end="\n\n")
     print(np.sqrt(ex_b), end="\n\n")
 
     # Binary Ufunc example
     print(np.maximum(ex_a, ex_b), end="\n\n")
 
+    # Ufunc with multples returns
+    ex_arr = np.random.rand(7) * 5
+
+    print('ex_arr: ', ex_arr, end="\n\n")
+
+    remainder, whole_part = np.modf(ex_arr)
+
+    print(remainder, end="\n\n")
+    print(whole_part, end="\n\n")
+
+    """
+    logical operations with np.where()
+    np.where(conditional, if::true, ::else)
+    """
+    arr_value, arr_value2 = np.array([2, 4, 6, 8, 10]), np.array([3, 5, 7, 9, 11])
+    arr_condition = np.array([True, False, True, True, False])
+
+    # using only python list comprehension
+    valid_value = [
+        (x if y else z)
+        for y, x, z in
+        zip(arr_condition, arr_value, arr_value2)
+    ]
+    print(valid_value, end="\n\n")
+
+    # using np.where
+    new_value = np.where(arr_condition, arr_value, arr_value2)
+    print(new_value, end="\n\n")
+
+
+    
+    
