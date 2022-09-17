@@ -212,7 +212,7 @@ if __name__ == "__main__":
     arr = np.random.randn(100)
 
     print('arr bool: ', arr, end="\n\n")
-    print('arr: ', (arr > 0).sum(), end="\n\n")  # operation = (arr > 0).sum() it will sum all values true in condition
+    print('arr: ', (arr > 0).sum(), end="\n\n")  # operation = (arr > 0).sum() it will sum all true values in condition
 
     arr_bool = np.array([True, False, True, True, False])
 
