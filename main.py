@@ -204,10 +204,23 @@ if __name__ == "__main__":
     arr = np.arange(40).reshape((4, 2, 5))
     print('arr: ', arr, end="\n\n")
     print(arr.cumsum(axis=0), end="\n\n")
+    
+    """
+    methods for boolean nArrays
+    """
+    
+    arr = np.random.randn(100)
 
+    print('arr bool: ', arr, end="\n\n")
+    print('arr: ', (arr > 0).sum(), end="\n\n")  # operation = (arr > 0).sum() it will sum all values true in condition
 
+    arr_bool = np.array([True, False, True, True, False])
 
+    # arr.all return True if all values is True
+    print(arr_bool.all(), end="\n\n")
 
+    # arr.any return True if any value is True
+    print(arr_bool.any(), end="\n\n")
 
 
 
